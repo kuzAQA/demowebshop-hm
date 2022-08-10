@@ -1,6 +1,5 @@
 import com.codeborne.selenide.WebDriverRunner;
 import config.AuthData;
-import config.WebConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -13,7 +12,6 @@ import static com.codeborne.selenide.Selenide.open;
 import static helpers.CustomApiListener.withCustomTemplates;
 import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
-
 
 public class DemowebshopTests extends TestBase {
     static AuthData config = ConfigFactory.create(AuthData.class, System.getProperties());
