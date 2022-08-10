@@ -22,7 +22,7 @@ public class TestBase {
 
         RestAssured.baseURI = config.getBaseUrl();
 
-        Configuration.browser = config.browser();
+        Configuration.browser = System.getProperty("browser");
         Configuration.baseUrl = config.getBaseUrl();
 
         if(config.getRemoteUrl() != null) {
