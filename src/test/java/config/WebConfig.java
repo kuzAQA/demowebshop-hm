@@ -14,4 +14,10 @@ public interface WebConfig extends Config {
 
     @Key("remoteUrl")
     String getRemoteUrl();
+
+    @Key("selenideLogin")
+    String getSelenideLogin();
+
+    @Key("selenidePass")
+    String getSelenidePass();
 }

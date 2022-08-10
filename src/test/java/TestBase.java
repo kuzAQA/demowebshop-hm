@@ -16,6 +16,8 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAllTests() {
+        String urlSelenoid;
+
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         RestAssured.baseURI = config.getBaseUrl();
@@ -24,7 +26,10 @@ public class TestBase {
         Configuration.baseUrl = config.getBaseUrl();
 
         if(config.getRemoteUrl() != null) {
-            Configuration.remote = config.getRemoteUrl();
+            urlSelenoid = new StringBuilder(config.getRemoteUrl())
+                    .insert(8, config.getSelenideLogin() + ":" + config.getSelenidePass() + "@")
+                    .toString();
+            Configuration.remote = urlSelenoid;
         }
     }
 
